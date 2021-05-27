@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let langs = ["SwiftUI","Objective-C","Python"]
+    
+    @State private var selectionValue = 0
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Picker("피커", selection: $selectionValue, content: {
+            ForEach(0..<langs.count){
+                Text("I am good at \(langs[$0])")
+            }
+        })
     }
 }
 
