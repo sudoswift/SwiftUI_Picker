@@ -13,7 +13,10 @@ struct ContentView: View {
     
     let myColorArray = ["레드","그린","블루"]
     
+    //Swift에서 func 사용법
+    //func 함수명(파라미터: 파라미터의 타입(Int,String,Bool ...)) -> 반환할 타입{}
     func changeColor(index: Int) -> Color{
+        //switch 문을 사용해 index가 0일 경우 red... 으로 설정해주고 default는 red로 설정해준다.
         switch index {
         case 0:
             return Color.red
@@ -33,7 +36,7 @@ struct ContentView: View {
             
             Circle()
                 .frame(width: 60, height: 60)
-                .foregroundColor(.blue)
+                .foregroundColor(changeColor(index: selectionValue))
             
             Text("세그먼트 value : \(selectionValue)")
             Text("선택된 색 : \(myColorArray[selectionValue])")
