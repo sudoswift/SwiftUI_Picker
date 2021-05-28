@@ -15,12 +15,22 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .center){
             Text("선택된 값 : \(selectionValue)")
+            // 같은 뷰에서 picker는 같은 Binding을 공유한다.
             Picker("", selection: $selectionValue, content: {
-                Text("수박").tag(0)
-                Text("바나나").tag(1)
-                Text("딸기").tag(2)
+                Text("레드").tag(0)
+                Text("그린").tag(1)
+                Text("블루").tag(2)
             })
+            .padding(.horizontal, 50.0)
             .pickerStyle(SegmentedPickerStyle()) // picker style 이 segmentedpickerstyle로 변경됨
+            
+            Picker("", selection: $selectionValue, content: {
+                Text("레드").tag(0)
+                Text("그린").tag(1)
+                Text("블루").tag(2)
+            })
+            .padding(.horizontal, 50.0)
+
         }
     }
 }
