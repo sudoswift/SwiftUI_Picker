@@ -9,12 +9,34 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let langs = ["SwiftUI","Objective-C","Python"]
-    
     @State private var selectionValue = 0
+    
+    let myColorArray = ["레드","그린","블루"]
+    
+    func changeColor(index: Int) -> Color{
+        switch index {
+        case 0:
+            return Color.red
+        case 1:
+            return Color.green
+        case 2:
+            return Color.blue
+        default:
+            return Color.red
+        }
+        
+    }
+    
     var body: some View {
+        
         VStack(alignment: .center){
-            Text("선택된 값 : \(selectionValue)")
+            
+            Circle()
+                .frame(width: 60, height: 60)
+                .foregroundColor(.blue)
+            
+            Text("세그먼트 value : \(selectionValue)")
+            Text("선택된 색 : \(myColorArray[selectionValue])")
             // 같은 뷰에서 picker는 같은 Binding을 공유한다.
             Picker("", selection: $selectionValue, content: {
                 Text("레드").tag(0)
