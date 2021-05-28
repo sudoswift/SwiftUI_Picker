@@ -13,10 +13,10 @@ struct ContentView: View {
     
     @State private var selectionValue = 0
     var body: some View {
-        Picker("피커", selection: $selectionValue, content: {
-            ForEach(0..<langs.count){
-                Text("I am good at \(langs[$0])")
-            }
+        Picker("", selection: $selectionValue, content: {
+            Text("수박").tag(0)
+            Text("바나나").tag(1)
+            Text("딸기").tag(2)
         })
     }
 }
