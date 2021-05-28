@@ -36,7 +36,7 @@ struct ContentView: View {
             
             Circle()
                 .frame(width: 60, height: 60)
-                .foregroundColor(changeColor(index: selectionValue))
+                .foregroundColor(self.changeColor(index: selectionValue))
             
             Text("세그먼트 value : \(selectionValue)")
             Text("선택된 색 : \(myColorArray[selectionValue])")
@@ -55,8 +55,12 @@ struct ContentView: View {
                 Text("블루").tag(2)
             })
             .padding(.horizontal, 50.0)
+            .frame(width:50, height: 100)
+            .clipped()
+            .border(changeColor(index: selectionValue), width:10)
 
-        }
+        } // VStack
+        .padding()
     }
 }
 
