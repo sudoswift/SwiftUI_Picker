@@ -46,8 +46,9 @@ struct ContentView: View {
             .pickerStyle(SegmentedPickerStyle())
             
             List{
-                ForEach(myFriendsList.filter{
-                    $0.school == filteredValue
+                ForEach(myFriendsList.filter{ filterterm in
+                    //$0.school == filteredValue
+                    filterterm.school == filteredValue
                 }){ friendItem in
                 GeometryReader{ GeometryProxy in
                     HStack {
